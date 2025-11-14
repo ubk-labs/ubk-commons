@@ -22,7 +22,6 @@
     "LICENSE"
   ],
   "devDependencies": {
-    "@graphprotocol/hardhat-graph": "^0.1.0-alpha.2",
     "@nomicfoundation/hardhat-toolbox": "^3.0.0",
     "@openzeppelin/contracts": "^5.0.1",
     "dotenv": "^16.1.4",
@@ -31,8 +30,5 @@
     "hardhat-tracer": "^3.4.0",
     "prettier": "^3.2.5",
     "solidity-coverage": "^0.8.16"
-  },
-  "dependencies": {
-    "@chainlink/contracts": "^0.6.1"
   }
 }
