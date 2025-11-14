@@ -1,0 +1,35 @@
+# Node modules
+node_modules/
+
+# Hardhat cache and artifacts
+cache/
+typechain/
+typechain-types/
+artifacts/
+
+# Deployment data
+deployments/
+
+# Environment variables
+.env
+
+# ABI exports (optional if generated)
+abi/
+
+# VSCode settings
+.vscode/
+
+# MacOS system files
+.DS_Store
+
+# Logs
+*.log
+
+# Coverage reports
+coverage/
+
+# Compiled binaries (if using Foundry later)
+out/
+
+# bin files
+bin/

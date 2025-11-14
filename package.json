@@ -1,0 +1,38 @@
+{
+  "name": "@ubk-labs/ubk-commons",
+  "version": "0.1.0",
+  "description": "Commons package for UBK smart contracts.",
+  "scripts": {
+    "build": "npx hardhat compile",
+    "test": "npx hardhat test",
+    "coverage": "hardhat coverage",
+    "lint": "prettier --check .",
+    "format": "prettier --write ."
+  },
+  "keywords": [
+    "DeFi",
+    "Solidity",
+    "Hardhat"
+  ],
+  "author": "UBK Labs",
+  "license": "MIT",
+  "files": [
+    "commons",
+    "README.md",
+    "LICENSE"
+  ],
+  "devDependencies": {
+    "@graphprotocol/hardhat-graph": "^0.1.0-alpha.2",
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "@openzeppelin/contracts": "^5.0.1",
+    "dotenv": "^16.1.4",
+    "ethers": "^6.7.0",
+    "hardhat": "^2.26.3",
+    "hardhat-tracer": "^3.4.0",
+    "prettier": "^3.2.5",
+    "solidity-coverage": "^0.8.16"
+  },
+  "dependencies": {
+    "@chainlink/contracts": "^0.6.1"
+  }
+}
