@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
 // ───────────── Access Control Errors ─────────────
 error UnauthorizedAccess(string functionName, address caller);
 
