@@ -1,6 +1,6 @@
 {
   "name": "@ubk-labs/ubk-commons",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Commons package for UBK smart contracts.",
   "scripts": {
     "build": "npx hardhat compile",
