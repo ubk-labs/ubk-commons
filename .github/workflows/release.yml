@@ -1,4 +1,4 @@
-name: Publish Oracle Package
+name: Publish @ubk-commons
 
 on:
   push:
