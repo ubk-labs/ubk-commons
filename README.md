@@ -1,22 +1,12 @@
-# `ubk-commons`
-
-Shared, versioned common definitions used across UBK Labs’ protocols and tooling.
-
-`ubk-commons` provides a minimal set of public, non-sensitive primitives that multiple UBK repositories depend on.  
-
 ---
 
-## Contents
+# `ubk-commons`
 
-### 1. Common Errors  
-Contract-level errors that are not specific to any one UBK module.
+Shared, versioned primitives used across the UBK Labs protocol ecosystem.  
+This package provides **canonical constants, errors, interfaces, and mocks** that multiple UBK modules depend on.
 
-### Constants  
-System constants that are shared across open and closed modules, such as:
-
-- Standardized USD scaling (1e18)  
-- Default oracle bounds  
-- Decimal normalization factors  
+`ubk-commons` contains only **non-sensitive**, **non-business-critical**, and **publicly safe** components.  
+All exported symbols are designed to remain **stable within a major version** and suitable for external integration.
 
 ---
 
@@ -24,20 +14,99 @@ System constants that are shared across open and closed modules, such as:
 
 ```bash
 npm install @ubk-labs/ubk-commons
+````
+
+---
+
+## Repository Structure
+
 ```
+ubk-commons/
+│
+├─ contracts/
+│   ├─ constants/
+│   │   └─ UBKConstants.sol
+│   ├─ errors/
+│   │   └─ UBKErrors.sol
+│   └─ mocks/
+│       ├─ MockAggregatorV3.sol
+│       ├─ MockERC20.sol
+│       └─ MockERC4626.sol
+│
+├─ interfaces/
+│   └─ mocks/
+│       └─ MockIERC4626.sol
+│
+└─ test/
+    └─ mocks/
+        ├─ MockAggregatorV3.test.js
+        ├─ MockERC20.test.js
+        └─ MockERC4626.test.js
+```
+
+This layout is consistent across all UBK Labs repositories, enabling predictable imports, shared test utilities, and standardized developer ergonomics.
 
 ---
 
 ## Solidity Usage
 
+### **Errors**
+
 ```solidity
-import "@ubk-labs/ubk-commons/commons/Errors.sol";
-import "@ubk-labs/ubk-commons/commons/Constants.sol";
+import "@ubk-labs/ubk-commons/contracts/errors/UBKErrors.sol";
+
+contract Example {
+    using UBKErrors for *;
+
+    function doThing() external {
+        revert UBKErrors.NotAuthorized();
+    }
+}
 ```
 
-These symbols are guaranteed to remain stable within a major version.
+---
+
+### **Constants**
+
+```solidity
+import "@ubk-labs/ubk-commons/contracts/constants/UBKConstants.sol";
+
+uint256 public constant SCALE = UBKConstants.USD_SCALE; // e.g., 1e18
+```
+
+---
+
+### **Mocks (for testing)**
+
+```solidity
+import "@ubk-labs/ubk-commons/contracts/mocks/MockERC20.sol";
+
+MockERC20 token = new MockERC20("Mock Token", "MOCK", 18);
+```
+
+Mocks are intentionally lightweight and dependency-free so they can be used in:
+
+* unit tests
+* integration tests
+* fuzzing frameworks
+* protocol simulations
+* external integrations
+
+---
+
+## Testing
+
+This package uses Hardhat.
+
+```bash
+npm install
+npx hardhat test
+```
+
+Tests validate mock behavior and ensure constant/error stability.
+
+---
 
 ## License
 
 MIT
----
