@@ -1,6 +1,6 @@
 {
   "name": "@ubk-labs/ubk-commons",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Commons package for UBK smart contracts.",
   "scripts": {
     "build": "npx hardhat compile",
@@ -18,6 +18,8 @@
   "license": "MIT",
   "files": [
     "contracts",
+    "interfaces",
+    "package.json",
     "README.md",
     "LICENSE"
   ],
