@@ -5,9 +5,6 @@
 Shared, versioned primitives used across the UBK Labs protocol ecosystem.  
 This package provides **canonical constants, errors, interfaces, and mocks** that multiple UBK modules depend on.
 
-`ubk-commons` contains only **non-sensitive**, **non-business-critical**, and **publicly safe** components.  
-All exported symbols are designed to remain **stable within a major version** and suitable for external integration.
-
 ---
 
 ## Installation
